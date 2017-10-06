@@ -20,6 +20,22 @@
 #
 # TODO - write sleep_in?
 
+def sleep_in? (weekday, vacation)
+	if vacation 
+		return true
+	end
+
+	if weekday 
+		return false
+	end
+
+	if !weekday
+		return true
+	end
+
+
+end
+
 
 # monkey_trouble?
 #
@@ -34,6 +50,29 @@
 #   * b_smiling   - true only if monkey b is smiling
 #
 # TODO - write monkey_trouble?
+#
+def monkey_trouble? (a_smile, b_smile)
+	if a_smile
+		return false
+	end
+
+	if b_smile
+		return false
+	end
+
+	if a_smile
+		if b_smile
+			return true
+		end
+	end
+
+	if !a_smile
+		if !b_smile
+			return true
+		end
+	end
+
+end
 
 
 # sum_double
@@ -48,7 +87,17 @@
 #
 # TODO - write sum_double
 
+def sum_double (a,b)
+	
+	if a != b 
+		return a + b 
+	end 
 
+	if a = b 
+		return 2 * (a + b)
+	end
+
+end
 
 
 # *****************************************************
@@ -73,6 +122,40 @@
 #
 # TODO - write blackjack (tests first)
 
+def blackjack (c, d)
+	if c > 21
+		if d > 21
+			return 0
+		end
+	end
+
+	if c < 21
+		if d < 21
+			if d > c
+				return d
+			end
+		end
+	end
+
+	if c < 21
+		if d > 21
+			if c < d 
+				return c 
+			end
+		end
+	end
+
+	if c > 21
+		if d < 21
+			if d < c
+				return d 
+			end
+		end
+	end
+end
+
+
+
 
 # n_twice
 #
@@ -89,6 +172,13 @@
 #
 # TODO - write n_twice (tests first)
 
+def n_twice (str, n)
+	str[0...n] + str[(str.length - n)..(str.length)]
+end
+
+
+
+
 
 # close_far
 #
@@ -103,3 +193,21 @@
 #   * c - an integer
 #
 # TODO - write close_far (tests first)
+
+def close_far(a,b,c)
+	bc = (b-c).abs 
+	ab = (a-b).abs
+	ac = (a-c).abs
+
+	if bc > 1
+		if ab > 1 
+			return "far"
+		end
+	end
+
+	if bc < 1 
+		if ab < 1
+			return "close"
+		end
+	end 
+end
